@@ -1,0 +1,38 @@
+/* ===== 全局样式 ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* 为每个模块区域增加一些间隔和顶部边距 */
+.module-section {
+    margin-top: 2.5rem;
+    padding-top: 1rem;
+}
+
+/* ===== 药敏报告表格增强样式 ===== */
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05); /* 浅蓝色悬停 */
+}
+
+/* 进度条容器背景色微调 */
+.progress {
+    background-color: #e9ecef;
+}
+
+/* ===== 卡片通用样式 ===== */
+.card {
+    border: none;
+    border-radius: 0.5rem;
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== 导航栏样式微调 ===== */
+.navbar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
