@@ -1,0 +1,107 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", sans-serif;
+}
+body { 
+    background: #f8fbff;
+    color: #333;
+}
+.container { max-width: 1000px;
+     margin: 0 auto; 
+     padding: 0 1rem; 
+}
+header { background: #e6f2ff;
+    padding: 1.2rem 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(144, 202, 249, 0.15);
+}
+.logo { display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+.logo i { font-size: 1.8rem;
+    color: #4299e1;
+}
+.nav-btn { background: #fff;
+    color: #4299e1;
+    border: 1px solid #9bc2ff;
+    padding: 0.5rem 1.2rem;
+    margin: 0 0.4rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.nav-btn.active { background: #4299e1;
+    color: #fff;
+    border-color: #4299e1;
+    }
+main { margin: 2rem 0;
+}
+.tab-content { display: none;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(144, 202, 249, 0.1);
+}
+.tab-content.active { display: block;
+}
+h2 { color: #2d3748;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e8f4f8;
+}
+.content-card { gap: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.report-item, .med-item, .reminder-item { padding: 1rem;
+     border-radius: 8px;
+      background: #fafdff;
+       border: 1px solid #e8f4f8;
+}
+h3 { color: #4299e1;
+    margin-bottom: 0.6rem;
+}
+.operate-btn { background: #4299e1;
+    color: #fff; border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.operate-btn:hover { background: #3182ce;
+}
+.complete-btn { background: #38b2ac;
+}
+.complete-btn:hover { background: #319795;
+}
+.send-btn { width: 100%;
+    padding: 0.7rem;
+    font-size: 1rem;
+}
+.form-group { margin-bottom: 1rem;
+}
+label { display: block;
+    margin-bottom: 0.4rem;
+    color: #4a5568; 
+}
+textarea, select { width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e8f4f8;
+    border-radius: 8px;
+    background: #fafdff;
+    resize: none; 
+}
+.consult-status { margin-top: 1rem;
+     text-align: center;
+}
+footer { text-align: center; 
+    padding: 1.5rem;
+    color: #718096;
+    font-size: 0.9rem;
+    border-top: 1px solid #e8f4f8;
+}

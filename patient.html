@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>患者端功能</title>
+    <link rel="stylesheet" href="css/patient.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-user-injured"></i>
+                <h1>患者端功能</h1>
+            </div>
+            <nav>
+                <button class="nav-btn active" data-tab="reports">检测报告</button>
+                <button class="nav-btn" data-tab="medication">用药指导</button>
+                <button class="nav-btn" data-tab="followup">随访提醒</button>
+                <button class="nav-btn" data-tab="consult">在线咨询</button>
+            </nav>
+        </header>
+
+        <main>
+
+            <section id="reports" class="tab-content active">
+                <h2>检测报告</h2>
+                <div class="content-card">
+                    <div class="report-item">
+                        <h3>检测</h3>
+                        <p>检测日期：</p >
+                        <p>检测机构：</p >
+                        <button class="operate-btn view-btn">查看完整报告</button>
+                    </div>
+                    <div class="report-item">
+                        <h3>检测</h3>
+                        <p>检测日期：</p >
+                        <p>检测机构：</p >
+                        <button class="operate-btn view-btn">查看完整报告</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="medication" class="tab-content">
+                <h2>用药指导</h2>
+                <div class="content-card">
+                    <div class="med-item">
+                        <h3>药品</h3>
+                        <p><strong>规格：</strong></p >
+                        <p><strong>用法：</strong></p >
+                        <p><strong>时间：</strong></p >
+                    </div>
+                    <div class="med-item">
+                        <h3>药品</h3>
+                        <p><strong>规格：</strong></p >
+                        <p><strong>用法：</strong></p >
+                        <p><strong>时间：</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="followup" class="tab-content">
+                <h2>随访管理提醒</h2>
+                <div class="content-card">
+                    <div class="reminder-item">
+                        <h3><i class="fas fa-bell"></i> 随访</h3>
+                        <p><strong>提醒时间：</strong></p >
+                        <p><strong>随访方式：</strong></p >
+                        <p><strong>科室：</strong></p >
+                        <button class="operate-btn complete-btn">标记已完成</button>
+                    </div>
+                    <div class="reminder-item">
+                        <h3><i class="fas fa-bell"></i> 随访</h3>
+                        <p><strong>提醒时间：</strong></p >
+                        <p><strong>随访方式：</strong></p >
+                        <p><strong>备注：</strong></p >
+                        <button class="operate-btn complete-btn">标记已完成</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consult" class="tab-content">
+                <h2>在线咨询</h2>
+                <div class="content-card">
+                    <form id="consult-form">
+                        <div class="form-group">
+                            <label for="consult-content">咨询内容</label>
+                            <textarea id="consult-content" placeholder="请详细描述您的问题" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="consult-type">咨询类型</label>
+                            <select id="consult-type" required>
+                                <option value="">请选择咨询类型</option>
+                                <option value="report">报告解读</option>
+                                <option value="medication">用药咨询</option>
+                                <option value="symptom">症状咨询</option>
+                                <option value="other">其他问题</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="operate-btn send-btn">提交咨询</button>
+                    </form>
+                    <div class="consult-status"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>患者端功能 </p >
+        </footer>
+    </div>
+
+    <script src="js/patient.js"></script>
+</body>
+</html>
