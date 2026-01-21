@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>肠享智疗 - AI精准医疗平台</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+          crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        
+    <!-- 患者端样式 -->
+    <link rel="stylesheet" href="patient.css">
+</head>
+    
+    <!-- 门户页面专属样式 -->
+    <style>
+        :root {
+            --hospital-blue: #007bff;
+            --patient-green: #28a745;
+            --gradient-blue: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            --gradient-green: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .portal-header {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .platform-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-hospital {
+            background: var(--gradient-blue);
+            color: white;
+        }
+        
+        .card-patient {
+            background: var(--gradient-green);
+            color: white;
+        }
+        
+        .platform-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .btn-portal {
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+        
+        .btn-portal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-hospital {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        
+        .btn-patient {
+            background: white;
+            color: var(--patient-green);
+        }
+        
+        .btn-patient:hover {
+            background: #f8f9fa;
+            color: var(--patient-green);
+        }
+        
+        .features-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .developer-badge {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 0.25rem 1rem;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .portal-footer {
+            margin-top: auto;
+            padding: 2rem 0;
+            background: rgba(0, 0, 0, 0.05);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .portal-header {
+                padding: 2rem 0;
+            }
+            
+            .platform-card {
+                margin-bottom: 2rem;
+            }
+            
+            .platform-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <body>
+    <!-- ===== 患者端导航栏 ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href=" ">
+                <i class="bi bi-person-circle"></i> 肠享智疗 | 患者端
+            </a >
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#patientNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="patientNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="portal.html">
+                            <i class="bi bi-house-door"></i> 门户首页
+                        </a >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-hospital"></i> 医院端
+                        </a >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <i class="bi bi-file-medical"></i> 我的报告
+                        </a >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-calendar-check"></i> 治疗方案
+                        </a >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-heart-pulse"></i> 健康跟踪
+                        </a >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-chat-dots"></i> 在线咨询
+                        </a >
+                    </li>
+                </ul>
+                
+                <div class="text-white">
+                    <small>患者ID: PAT-2023-001 | 最后登录: <span id="patient-last-login">今天</span></small>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- 在现有导航栏中添加 -->
+<li class="nav-item">
+    <a class="nav-link" href=" ">
+        <i class="bi bi-house-door"></i> 门户首页
+    </a >
+</li>
+    
+    <!-- ===== 顶部平台切换提示 ===== -->
+    <div class="container-fluid bg-info text-white py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <i class="bi bi-person-check"></i>
+                <small>当前身份：患者</small>
+                <span class="badge bg-light text-success ms-2">患者端平台</span>
+            </div>
+            <div>
+                <a href="index.html" class="btn btn-sm btn-light">
+                    <i class="bi bi-hospital"></i> 切换到医院端
+                </a >
+                <small class="ms-2 opacity-75">由成员A开发</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 这里开始是患者端原有内容 -->
+    ...
+</body>
+    <!-- ===== 门户头部 ===== -->
+    <header class="portal-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="bi bi-shield-plus"></i> 肠享智疗
+                    </h1>
+                    <p class="lead mb-4" style="opacity: 0.9;">
+                        AI驱动的精准医疗平台 | 基于类器官技术的个性化药敏检测
+                    </p >
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-primary p-2">AI+类器官融合模型</span>
+                        <span class="badge bg-light text-primary p-2">预测准确率92%+</span>
+                        <span class="badge bg-light text-primary p-2">临床样本 >1200例</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="mt-4 mt-lg-0">
+                        <i class="bi bi-cpu-fill display-1 opacity-75"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== 平台选择区域 ===== -->
+    <main class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bold mb-4 text-muted">请选择您的访问身份</h2>
+                <p class="text-muted mb-5">根据不同角色提供定制化的功能界面</p >
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <!-- 医院端卡片 -->
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="platform-card card-hospital">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-hospital platform-icon"></i>
+                            <h3 class="fw-bold">医院端平台</h3>
+                            <p class="opacity-90">临床医生与研究人员专用</p >
+                        </div>
+                        
+                        <ul class="features-list mb-4">
+                            <li>药敏分析与报告生成</li>
+                            <li>数据管理与模型迭代</li>
+                            <li>线上培训与知识库</li>
+                            <li>临床样本管理</li>
+                            <li>AI模型监控</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href=" " class="btn btn-portal btn-hospital">
+                                <i class="bi bi-arrow-right-circle"></i> 进入医院端
+                            </a >
+                            <div class="developer-badge mt-3">
+                                <i class="bi bi-code-slash"></i> 由 成员A 开发
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 患者端卡片 -->
+            <div class="col-lg-5 col-md-6 mb-4">
+                <div class="platform-card card-patient">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-person-circle platform-icon"></i>
+                            <h3 class="fw-bold">患者端平台</h3>
+                            <p class="opacity-90">患者与家属查看报告专用</p >
+                        </div>
+                        
+                        <ul class="features-list mb-4">
+                            <li>个性化药敏报告查看</li>
+                            <li>治疗建议与方案说明</li>
+                            <li>健康数据跟踪</li>
+                            <li>用药指导与提醒</li>
+                            <li>在线咨询入口</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="patient.html" class="btn btn-portal btn-patient">
+                                <i class="bi bi-arrow-right-circle"></i> 进入患者端
+                            </a >
+                            <div class="developer-badge mt-3">
+                                <i class="bi bi-code-slash"></i> 由 成员B 开发
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 平台统计数据 -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row text-center">
+                            <div class="col-md-3 mb-3">
+                                <h3 class="fw-bold text-primary">1,247+</h3>
+                                <p class="text-muted mb-0">累计临床样本</p >
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h3 class="fw-bold text-success">92.3%</h3>
+                                <p class="text-muted mb-0">AI模型准确率</p >
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h3 class="fw-bold text-info">50+</h3>
+                                <p class="text-muted mb-0">合作医疗机构</p >
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h3 class="fw-bold text-warning">24/7</h3>
+                                <p class="text-muted mb-0">全天候服务</p >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== 门户页脚 ===== -->
+    <footer class="portal-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5 class="fw-bold text-primary">
+                        <i class="bi bi-shield-plus"></i> 肠享智疗
+                    </h5>
+                    <p class="text-muted mb-0">
+                        基于AI与类器官技术的精准医疗解决方案
+                    </p >
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-3">
+                        <a href="#" class="text-muted text-decoration-none">
+                            <i class="bi bi-shield-check"></i> 隐私政策
+                        </a >
+                        <a href="#" class="text-muted text-decoration-none">
+                            <i class="bi bi-file-text"></i> 使用条款
+                        </a >
+                        <a href="#" class="text-muted text-decoration-none">
+                            <i class="bi bi-envelope"></i> 联系我们
+                        </a >
+                    </div>
+                    <p class="text-muted mt-2 mb-0">
+                        © 2023 肠享智疗 AI临床平台原型 | 本界面为功能展示原型
+                    </p >
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 门户页面脚本 -->
+    <script>
+        // 卡片悬停效果增强
+        document.querySelectorAll('.platform-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+        
+        // 页面加载动画
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // 更新当前年份
+            document.querySelector('footer p').innerHTML = 
+                document.querySelector('footer p').innerHTML.replace('2023', new Date().getFullYear());
+        });
+    </script>
+</body>
+</html>
