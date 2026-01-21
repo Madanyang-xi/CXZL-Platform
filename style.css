@@ -36,3 +36,140 @@ body {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
 }
+/* ===== 肠享智疗平台增强样式 ===== */
+
+/* 确保容器有足够的间距 */
+.container-fluid {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* 表格头部增强 */
+.table thead th {
+    background-color: #f1f5f9 !important;
+    border-top: none !important;
+    font-weight: 600 !important;
+    color: #495057 !important;
+    padding: 1rem !important;
+}
+
+/* 表格单元格 */
+.table td {
+    padding: 1rem !important;
+    vertical-align: middle !important;
+}
+
+/* 特殊行样式 */
+.table-success {
+    background-color: rgba(25, 135, 84, 0.05) !important;
+}
+
+.table-secondary {
+    background-color: rgba(108, 117, 125, 0.05) !important;
+}
+
+/* 进度条增强 */
+.progress {
+    height: 12px !important;
+    border-radius: 6px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.progress-bar {
+    border-radius: 6px !important;
+}
+
+/* 徽章样式增强 */
+.badge {
+    font-size: 0.85em !important;
+    padding: 0.4em 0.8em !important;
+    border-radius: 20px !important;
+    font-weight: 500 !important;
+}
+
+/* 按钮增强 */
+.btn {
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.75rem !important;
+}
+
+/* 导航栏品牌增强 */
+.navbar-brand {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* 导航链接悬停效果 */
+.nav-link {
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px) !important;
+}
+
+/* 卡片头部增强 */
+.card-header {
+    background-color: #f8f9fa !important;
+    border-bottom: 2px solid #e9ecef !important;
+    border-radius: 0.5rem 0.5rem 0 0 !important;
+    font-weight: 600 !important;
+    padding: 1rem 1.25rem !important;
+}
+
+/* 卡片标题 */
+.card-title {
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* 警示框增强 */
+.alert {
+    border-radius: 0.5rem !important;
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+}
+
+/* 显示数字样式增强 */
+.display-6 {
+    font-weight: 700 !important;
+    color: #212529 !important;
+}
+
+/* 页脚样式 */
+footer {
+    margin-top: 4rem !important;
+    padding: 1.5rem 0 !important;
+    background-color: #f8f9fa !important;
+    border-top: 1px solid #dee2e6 !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .module-section {
+        margin-top: 1.5rem !important;
+        padding-top: 0.5rem !important;
+    }
+    
+    .card-header {
+        padding: 0.75rem 1rem !important;
+    }
+}
